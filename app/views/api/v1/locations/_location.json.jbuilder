@@ -8,3 +8,4 @@ json.hours location.hours
 json.notes location.notes
 json.latitude location.latitude
 json.longitude location.longitude
+json.icon asset_url('icons/' + location.color + '.png')

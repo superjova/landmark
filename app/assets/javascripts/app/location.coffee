@@ -10,6 +10,7 @@ App.Location = class Location
     @longitude = locationData.longitude
     @notes = locationData.notes
     @hours = locationData.hours
+    @icon = locationData.icon
 
     $(".js-location-menu-close").click =>
       @close()

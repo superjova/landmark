@@ -23,7 +23,7 @@ App.Map = Map = (function() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(location.latitude, location.longitude),
         map: this.map,
-        icon: '/assets/icons/' + location.color() + '.png'
+        icon: location.icon
       });
       bounds.extend(marker.position);
       google.maps.event.addListener(marker, 'click', (function(map, marker, location) {
