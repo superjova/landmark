@@ -6,6 +6,7 @@ App.Landmark = class Landmark
     @latitude = landmarkData.latitude
     @longitude = landmarkData.longitude
     @image = landmarkData.image
+    @icon = landmarkData.icon
 
   latLngString: ->
     "#{@latitude}, #{@longitude}"

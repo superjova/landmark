@@ -55,17 +55,18 @@ App.Map = Map = (function() {
     this.clearMarkers();
     this.directionsDisplay.setMap(this.map);
     this.directionsService.route({
-      origin: origin,
-      destination: destination,
+      origin: origin.latLngString(),
+      destination: destination.latLngString(),
       travelMode: google.maps.TravelMode.WALKING
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         var m;
         $this.directionsDisplay.setDirections(response);
         var leg = response.routes[ 0 ].legs[ 0 ];
+        console.log(origin.icon);
         m = new google.maps.Marker({
           position: leg.start_location,
-          icon: '/assets/icons/landmark.png',
+          icon: origin.icon,
           title: "The LandMark",
           map: $this.map
         });

@@ -2,7 +2,7 @@ App.Trip = class Trip
   constructor: (@overlord) ->
 
   start: (@landmark, @destination) ->
-    @overlord.map.directions(@landmark.latLngString(), @destination.latLngString())
+    @overlord.map.directions(@landmark, @destination)
     $("#overlord").addClass("overlord-trip")
     $(".js-map-landmark-image").css
       backgroundImage: "url('#{@landmark.image}')"
