@@ -1,5 +1,5 @@
 .overlord {
-  .category-menu {
+  .filter-menu {
     @include opacity(0.0);
     @include transition(0.4s ease-in-out);
     display: none;
@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 3;
 
-    .category-menu-background {
+    .filter-menu-background {
       @include opacity(0.8);
       background-color: #000000;
       height: 100%;
@@ -21,51 +21,102 @@
       z-index: 3;
     }
 
-    .category-menu-foreground {
+    .filter-menu-foreground {
       height: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       position: absolute;
-      padding: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 4;
     }
 
-    .category-menu-option {
+    .filter-menu-mode {
+      color: #FFFFFF;
+      float: left;
+      font-size: 16px;
+      height: 30px;
+      line-height: 20px;
+      padding: 5px;
+      text-align: center;
+      width: 50%;
+    }
+
+    .filter-menu-option {
       color: #AAAAAA;
       float: left;
       padding: 20px;
       width: 33.3%;
 
-      .category-menu-option-image {
-        @include opacity(0.35);
+      .filter-menu-option-image {
+        @include opacity(0.2);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 100%;
       }
 
-      .category-menu-option-name {
+      .filter-menu-option-name {
         font-size: 10px;
         margin-top: 10px;
         text-align: center;
       }
 
-      &.category-menu-option-active {
+      &.filter-menu-option-active {
         color: #FFFFFF;
 
-        .category-menu-option-image {
+        .filter-menu-option-image {
           @include opacity(1);
         }
       }
     }
 
-    .category-menu-close {
+    .filter-menu-tag {
+      color: #FFFFFF;
+
+      label {
+        display: block;
+      }
+    }
+
+    .filter-menu-close {
       color: #FFFFFF;
       font-size: 16px;
       margin-top: 20px;
       padding: 10px;
       text-align: center;
+    }
+
+    &.filter-menu-categories-open {
+      .filter-menu-mode-categories {
+        background-color: $blue;
+      }
+
+      .filter-menu-categories {
+        display: block;
+      }
+
+      .filter-menu-tags {
+        display: none;
+      }
+    }
+
+    &.filter-menu-tags-open {
+      .filter-menu-mode-tags {
+        background-color: $blue;
+      }
+
+      .filter-menu-categories {
+        display: none;
+      }
+
+      .filter-menu-tags {
+        display: block;
+      }
     }
 
   }
@@ -351,7 +402,7 @@
   }
 
   &.overlord-menu-open {
-    .category-menu {
+    .filter-menu {
       @include opacity(1);
       display: block;
     }

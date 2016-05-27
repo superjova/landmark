@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527030956) do
+ActiveRecord::Schema.define(version: 20160527123919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20160527030956) do
     t.integer "position"
   end
 
+  create_table "location_tags", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["location_id", "tag_id"], name: "index_location_tags_on_location_id_and_tag_id", using: :btree
+    t.index ["tag_id"], name: "index_location_tags_on_tag_id", using: :btree
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string  "type"
     t.string  "name"
@@ -57,6 +66,11 @@ ActiveRecord::Schema.define(version: 20160527030956) do
     t.string  "position",    default: "Staff Member"
     t.boolean "active",      default: true
     t.index ["location_id"], name: "index_staff_members_on_location_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
   end
 
 end

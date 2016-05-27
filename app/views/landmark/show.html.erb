@@ -1,29 +1,42 @@
 <style>
   <% LocationCategory.all.each do |category| %>
     <% category_slug = category.name.parameterize %>
-    .category-menu-option-<%= category_slug %> .category-menu-option-image {
+    .filter-menu-option-<%= category_slug %> .filter-menu-option-image {
       background-image: url('<%= asset_url("icons/#{ category_slug }.png") %>');
     }
   <% end %>
 </style>
 <div id="map" class="map"></div>
 <div id="overlord" class="overlord">
-  <div class="category-menu" class="category-menu">
-    <div class="category-menu-background"></div>
-    <div class="category-menu-foreground">
-      <div class="clearfix">
-        <% LocationCategory.all.each do |category| %>
-          <div class="category-menu-option<%= " category-menu-option-active" if category.default_active? %> category-menu-option-<%= category.name.parameterize %> js-category-menu-option" data-id="<%= category.id %>">
-            <div class="category-menu-option-image"></div>
-            <div class="category-menu-option-name"><%= category.name %></div>
+  <div class="filter-menu" class="filter-menu filter-menu-categories-open">
+    <div class="filter-menu-background"></div>
+    <div class="filter-menu-foreground">
+      <div class="filter-menu-mode filter-menu-mode-categories">Categories</div>
+      <div class="filter-menu-mode filter-menu-mode-tags">Tags</div>
+      <div class="filter-menu-categories">
+        <div class="clearfix">
+          <% LocationCategory.all.each do |category| %>
+            <div class="filter-menu-option<%= " filter-menu-option-active" if category.default_active? %> filter-menu-option-<%= category.name.parameterize %> js-filter-menu-option" data-id="<%= category.id %>">
+              <div class="filter-menu-option-image"></div>
+              <div class="filter-menu-option-name"><%= category.name %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="filter-menu-tags">
+        <% Tag.all.order("lower(name)").each do |tag| %>
+          <div class="filter-menu-tag js-filter-menu-tag" data-id="<%= tag.id %>">
+            <label>
+              <%= check_box_tag :tag_ids, tag.id %> <%= tag.name %>
+            </label>
           </div>
         <% end %>
       </div>
-      <div class="category-menu-close js-category-menu-close"><i class="fa fa-times"></i> Close</div>
+      <div class="filter-menu-close js-filter-menu-close"><i class="fa fa-times"></i> Close</div>
     </div>
   </div>
   <div class="map-menu" class="map-menu">
-    <div class="list-button js-category-menu-open" style="background-image: url('<%= asset_url("icons/menu.png") %>')"></div>
+    <div class="list-button js-filter-menu-open" style="background-image: url('<%= asset_url("icons/menu.png") %>')"></div>
     <div class="map-landmark">
       <div class="map-landmark-image js-map-landmark-image"></div>
       <div class="map-landmark-details">
@@ -53,14 +66,7 @@
           <div class="location-menu-details-notes js-location-menu-notes"></div>
         </div>
       </div>
-      <div class="location-menu-tags">
-        <div class="location-menu-tag location-menu-tag-pink">LGBT Friendly</div>
-        <div class="location-menu-tag location-menu-tag-blue">Family Focused</div>
-        <div class="location-menu-tag location-menu-tag-yellow">Free WiFi</div>
-        <div class="location-menu-tag location-menu-tag-green">Phone Charger</div>
-        <div class="location-menu-tag location-menu-tag-purple">Air Conditioned</div>
-        <div class="location-menu-tag location-menu-tag-red">Dog Friendly</div>
-      </div>
+      <div class="location-menu-tags js-location-menu-tags"></div>
       <div class="location-menu-comments">
         <% 10.times do %>
           <div class="location-menu-comment">

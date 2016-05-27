@@ -11,6 +11,7 @@ App.Location = class Location
     @notes = locationData.notes
     @hours = locationData.hours
     @icon = locationData.icon
+    @tags = (new App.Tag(@overload, tagData) for tagData in locationData.tags)
 
     $(".js-location-menu-close").click =>
       @close()
@@ -31,6 +32,10 @@ App.Location = class Location
       $(".js-location-menu-action-call").addClass("location-menu-action-call-active")
     else
       $(".js-location-menu-action-call").removeClass("location-menu-action-call-active")
+
+    $(".js-location-menu-tags").html("")
+    for tag in @tags
+      $(".js-location-menu-tags").append(tag.html())
 
     $("#location-menu").addClass("location-menu-open")
 

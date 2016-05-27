@@ -2,13 +2,13 @@ App.Menu = class Menu
   constructor: (@overlord) ->
     $this = @
 
-    $(".js-category-menu-open").click =>
+    $(".js-filter-menu-open").click =>
       @open()
 
-    $(".js-category-menu-close").click =>
+    $(".js-filter-menu-close").click =>
       @close()
 
-    $(".js-category-menu-option").click ->
+    $(".js-filter-menu-option").click ->
       $this.optionClicked($(@))
       $this.overlord.optionClicked()
 
@@ -21,4 +21,4 @@ App.Menu = class Menu
     $("#overlord").removeClass("overlord-menu-open")
 
   optionClicked: ($option) ->
-    $option.toggleClass("category-menu-option-active")
+    $option.toggleClass("filter-menu-option-active")

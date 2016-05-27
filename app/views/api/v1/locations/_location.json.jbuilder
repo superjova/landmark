@@ -9,3 +9,6 @@ json.notes location.notes
 json.latitude location.latitude
 json.longitude location.longitude
 json.icon asset_url('icons/' + location.color + '.png')
+json.tags do
+  json.array! location.tags, partial: 'api/v1/tags/tag', as: :tag
+end
