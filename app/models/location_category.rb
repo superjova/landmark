@@ -4,7 +4,7 @@ class LocationCategory < ApplicationRecord
   has_many :locations, dependent: :destroy
 
   def default_active?
-    ["Food", "Housing", "Health"].include?(name)
+    ["Food"].include?(name)
   end
 
 end
