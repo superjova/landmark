@@ -15,7 +15,7 @@ class Landmark < ApplicationRecord
   end
 
   def self.nearest_to(location)
-    self.near(location, 20, {}).first
+    self.near(location, 50, {}).first
   end
 
 end

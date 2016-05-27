@@ -5,7 +5,7 @@ class API::V1::LandmarksController < API::V1Controller
     if @landmark
       render "api/v1/landmarks/show"
     else
-      render :not_found
+      render nothing: true, status: :not_found
     end
   end
 end
