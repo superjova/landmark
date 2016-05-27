@@ -1,0 +1,348 @@
+.overlord {
+  .category-menu {
+    @include opacity(0.0);
+    @include transition(0.4s ease-in-out);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+
+    .category-menu-background {
+      @include opacity(0.8);
+      background-color: #000000;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .category-menu-foreground {
+      height: 100%;
+      position: absolute;
+      padding: 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+    }
+
+    .category-menu-option {
+      color: #AAAAAA;
+      float: left;
+      padding: 20px;
+      width: 33.3%;
+
+      .category-menu-option-image {
+        @include opacity(0.35);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 100%;
+      }
+
+      .category-menu-option-name {
+        font-size: 10px;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      &.category-menu-option-active {
+        color: #FFFFFF;
+
+        .category-menu-option-image {
+          @include opacity(1);
+        }
+      }
+    }
+
+    .category-menu-close {
+      color: #FFFFFF;
+      font-size: 16px;
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+
+  }
+
+  .map-menu {
+    @include opacity(1);
+    @include transition(0.4s ease-in-out);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+
+    .list-button {
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      bottom: 60px;
+      right: 10px;
+      width: 70px;
+      height: 70px;
+    }
+
+    .map-landmark {
+      display: none;
+    }
+
+    .map-landmark, .map-chat {
+      background-color: #FFFFFF;
+      height: 55px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+
+      .map-landmark-image, .map-chat-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+        height: 100%;
+        margin-right: 10px;
+        width: 80px;
+      }
+
+      .map-landmark-details, .map-chat-details {
+        height: 55px;
+        padding: 2px 5px;
+
+        .map-landmark-description, .map-chat-description {
+          color: #999999;
+          font-size: 10px;
+          font-style: italic;
+        }
+
+        .map-landmark-name, .map-chat-name {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 20px;
+        }
+
+        .map-landmark-address, .map-chat-address {
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+
+  .location-menu {
+    background-color: #FFFFFF;
+    border: solid 1px #AAAAAA;
+    bottom: 40px;
+    display: none;
+    left: 5px;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    z-index: 5;
+
+    .location-menu-close {
+      color: #FFFFFF;
+      font-size: 18px;
+      padding: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 3;
+    }
+
+    .location-menu-details {
+      background-color: #000000;
+      color: #FFFFFF;
+      height: 180px;
+      position: relative;
+
+      .location-menu-details-background {
+        @include opacity(0.75);
+        background-image: url('https://www.google.com/about/locations/los-angeles/images/binoculars.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      .location-menu-details-foreground {
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        position: absolute;
+        width: 100%;
+      }
+
+      .location-menu-details-name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .location-menu-details-type {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .location-menu-details-hours {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .location-menu-details-notes {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+    }
+
+    .location-menu-tags {
+      .location-menu-tag {
+        background-color: #AAAAAA;
+        color: #666666;
+        display: inline-block;
+        font-size: 13px;
+        margin-left: 3px;
+        margin-top: 3px;
+        padding: 3px 5px;
+
+        &.location-menu-tag-pink {
+          @include opacity(0.89);
+          background-color: $pink;
+          color: #FFFFFF;
+        }
+
+        &.location-menu-tag-blue {
+          @include opacity(0.89);
+          background-color: $blue;
+          color: #FFFFFF;
+        }
+
+        &.location-menu-tag-yellow {
+          @include opacity(0.89);
+          background-color: $yellow;
+          color: #FFFFFF;
+        }
+
+        &.location-menu-tag-green {
+          @include opacity(0.89);
+          background-color: $green;
+          color: #FFFFFF;
+        }
+
+        &.location-menu-tag-purple {
+          @include opacity(0.89);
+          background-color: $purple;
+          color: #FFFFFF;
+        }
+
+        &.location-menu-tag-red {
+          @include opacity(0.89);
+          background-color: $red;
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    .location-menu-actions {
+      bottom: 0px;
+      height: 60px;
+      left: 0px;
+      padding: 3px;
+      position: absolute;
+      width: 100%;
+
+      .location-menu-action-directions, .location-menu-action-call {
+        float: left;
+        padding: 3px;
+        width: 50%;
+
+        .location-menu-action-button {
+          height: 48px;
+          padding: 3px;
+
+          .location-menu-action-button-icon {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            float: left;
+            height: 26px;
+            margin-top: 7px;
+            margin-right: 10px;
+            width: 26px;
+          }
+
+          .location-menu-action-button-title {
+            font-size: 14px;
+          }
+
+          .location-menu-action-button-info {
+            color: #AAAAAA;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .location-menu-action-directions {
+        .location-menu-action-button {
+          border: solid 1px $blue;
+          color: $blue;
+
+          .location-menu-action-button-icon {
+            background-image: url("/assets/icons/directions.png");
+          }
+        }
+      }
+
+      .location-menu-action-call {
+        display: none;
+
+        .location-menu-action-button {
+          border: solid 1px $green;
+          color: $green;
+
+          .location-menu-action-button-icon {
+            background-image: url("/assets/icons/phone.png");
+          }
+        }
+
+        &.location-menu-action-call-active {
+          display: block;
+        }
+      }
+    }
+
+    &.location-menu-open {
+      display: block;
+    }
+  }
+
+  &.overlord-menu-open {
+    .category-menu {
+      @include opacity(1);
+      display: block;
+    }
+
+    .map-menu {
+      @include opacity(0);
+    }
+  }
+
+  &.overlord-trip {
+    .map-landmark {
+      display: block;
+    }
+
+    .map-chat {
+      display: none;
+    }
+  }
+}
