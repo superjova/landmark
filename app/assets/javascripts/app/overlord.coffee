@@ -15,6 +15,20 @@ App.Overlord = class Overlord
 
       $this.loadOptions()
 
+    $(".js-location-menu-close").click =>
+      @closeFilterMenu()
+
+    $(".js-filter-menu-mode-change-categories").click ->
+      $("#filter-menu").removeClass("filter-menu-tags-open")
+      $("#filter-menu").addClass("filter-menu-categories-open")
+
+    $(".js-filter-menu-mode-change-tags").click ->
+      $("#filter-menu").removeClass("filter-menu-categories-open")
+      $("#filter-menu").addClass("filter-menu-tags-open")
+
+  closeFilterMenu: ->
+    $("#location-menu").removeClass("location-menu-open")
+
   loadOptions: ->
     @map.clearMarkers();
     @map.clearRoute();
@@ -39,4 +53,4 @@ App.Overlord = class Overlord
     @loadOptions()
 
   gotDirections: ->
-    @locations[0].close()
+    @closeFilterMenu()

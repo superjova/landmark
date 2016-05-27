@@ -13,9 +13,6 @@ App.Location = class Location
     @icon = locationData.icon
     @tags = (new App.Tag(@overload, tagData) for tagData in locationData.tags)
 
-    $(".js-location-menu-close").click =>
-      @close()
-
     $(".js-location-menu-action-button-directions").click =>
       if @id == $("#location-menu").data("id")
         @travel()
@@ -38,9 +35,6 @@ App.Location = class Location
       $(".js-location-menu-tags").append(tag.html())
 
     $("#location-menu").addClass("location-menu-open")
-
-  close: ->
-    $("#location-menu").removeClass("location-menu-open")
 
   travel: ->
     $.ajax

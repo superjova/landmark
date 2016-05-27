@@ -8,13 +8,13 @@
 </style>
 <div id="map" class="map"></div>
 <div id="overlord" class="overlord">
-  <div class="filter-menu" class="filter-menu filter-menu-categories-open">
+  <div id="filter-menu" class="filter-menu filter-menu-categories-open">
     <div class="filter-menu-background"></div>
     <div class="filter-menu-foreground">
-      <div class="filter-menu-mode filter-menu-mode-categories">Categories</div>
-      <div class="filter-menu-mode filter-menu-mode-tags">Tags</div>
+      <div class="filter-menu-mode filter-menu-mode-categories js-filter-menu-mode-change-categories">Categories</div>
+      <div class="filter-menu-mode filter-menu-mode-tags js-filter-menu-mode-change-tags">Tags</div>
       <div class="filter-menu-categories">
-        <div class="clearfix">
+        <div class="filter-menu-options clearfix">
           <% LocationCategory.all.each do |category| %>
             <div class="filter-menu-option<%= " filter-menu-option-active" if category.default_active? %> filter-menu-option-<%= category.name.parameterize %> js-filter-menu-option" data-id="<%= category.id %>">
               <div class="filter-menu-option-image"></div>
