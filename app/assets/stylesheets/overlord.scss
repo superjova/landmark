@@ -138,12 +138,12 @@
   .location-menu {
     background-color: #FFFFFF;
     border: solid 1px #AAAAAA;
-    bottom: 40px;
     display: none;
-    left: 5px;
+    height: 100%;
+    left: 0px;
     position: absolute;
-    top: 40px;
-    right: 5px;
+    top: 0px;
+    width: 100%;
     z-index: 5;
 
     .location-menu-close {
