@@ -159,6 +159,7 @@
     .location-menu-scrollable {
       height: 100%;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       padding-bottom: 80px;
     }
 
