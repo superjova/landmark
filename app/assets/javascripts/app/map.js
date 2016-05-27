@@ -74,7 +74,6 @@ App.Map = Map = (function() {
 
         m = new google.maps.Marker({
           position: leg.end_location,
-          icon: '/assets/icons/blue.png',
           title: "destination",
           map: $this.map
         });
