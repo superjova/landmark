@@ -2,7 +2,7 @@
   <% LocationCategory.all.each do |category| %>
     <% category_slug = category.name.parameterize %>
     .category-menu-option-<%= category_slug %> .category-menu-option-image {
-      background-image: url('<%= asset_url("icons/#{ category_slug }") %>');
+      background-image: url('<%= asset_url("icons/#{ category_slug }.png") %>');
     }
   <% end %>
 </style>
