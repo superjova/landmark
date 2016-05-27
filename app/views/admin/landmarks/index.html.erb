@@ -1,0 +1,36 @@
+<h1>
+  Landmarks
+</h1>
+<%= link_to "Add a Landmark", new_admin_landmark_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Address
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @landmarks.each do |landmark| %>
+      <tr>
+        <td>
+          <% if landmark.image %>
+            <%= image_tag landmark.image.url, class: "img-responsive" %>
+          <% end %>
+        </td>
+        <td>
+          <%= landmark.name %>
+        </td>
+        <td>
+          <%= landmark.address %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

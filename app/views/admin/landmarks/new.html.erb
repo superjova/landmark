@@ -1,0 +1,29 @@
+<h1>
+  New Landmark
+</h1>
+<% if @landmark.errors.any? %>
+  <%= @landmark.errors.full_messages %>
+<% end %>
+<%= form_for [:admin, @landmark], html: { multipart: true } do |f| %>
+  <div class="row form-group">
+    <div class="col-md-3">
+      Name
+    </div>
+    <div class="col-md-9">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-3">
+      Address
+    </div>
+    <div class="col-md-9">
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-9 col-md-offset-3">
+      <%= f.submit class: "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
