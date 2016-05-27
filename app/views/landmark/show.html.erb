@@ -43,25 +43,36 @@
   </div>
   <div id="location-menu" class="location-menu" data-id="0">
     <div class="location-menu-close js-location-menu-close"><i class="fa fa-times"></i></div>
-    <div class="location-menu-details">
-      <div class="location-menu-details-background"></div>
-      <div class="location-menu-details-foreground">
-        <div class="location-menu-details-name js-location-menu-name"></div>
-        <div class="location-menu-details-type js-location-menu-type"></div>
-        <div class="location-menu-details-hours js-location-menu-hours"></div>
-        <div class="location-menu-details-notes js-location-menu-notes"></div>
+    <div class="location-menu-scrollable">
+      <div class="location-menu-details">
+        <div class="location-menu-details-background"></div>
+        <div class="location-menu-details-foreground">
+          <div class="location-menu-details-name js-location-menu-name"></div>
+          <div class="location-menu-details-type js-location-menu-type"></div>
+          <div class="location-menu-details-hours js-location-menu-hours"></div>
+          <div class="location-menu-details-notes js-location-menu-notes"></div>
+        </div>
       </div>
-    </div>
-    <div class="location-menu-tags">
-      <div class="location-menu-tag location-menu-tag-pink">LGBT Friendly</div>
-      <div class="location-menu-tag location-menu-tag-blue">Family Focused</div>
-      <div class="location-menu-tag location-menu-tag-yellow">Free WiFi</div>
-      <div class="location-menu-tag location-menu-tag-green">Phone Charger</div>
-      <div class="location-menu-tag location-menu-tag-purple">Air Conditioned</div>
-      <div class="location-menu-tag location-menu-tag-red">Dog Friendly</div>
-    </div>
-    <div class="location-menu-comments">
-
+      <div class="location-menu-tags">
+        <div class="location-menu-tag location-menu-tag-pink">LGBT Friendly</div>
+        <div class="location-menu-tag location-menu-tag-blue">Family Focused</div>
+        <div class="location-menu-tag location-menu-tag-yellow">Free WiFi</div>
+        <div class="location-menu-tag location-menu-tag-green">Phone Charger</div>
+        <div class="location-menu-tag location-menu-tag-purple">Air Conditioned</div>
+        <div class="location-menu-tag location-menu-tag-red">Dog Friendly</div>
+      </div>
+      <div class="location-menu-comments">
+        <% 10.times do %>
+          <div class="location-menu-comment">
+            <div class="location-menu-comment-user">
+              Kevin
+            </div>
+            <div class="location-menu-comment-text">
+              This place was really good. I got some food and was able to charge my phone. The WiFi is a plus also. If nothing else, come for the A/C.
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="location-menu-actions">
       <div class="location-menu-action-directions">

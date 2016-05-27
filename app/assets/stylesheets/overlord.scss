@@ -156,6 +156,12 @@
       z-index: 3;
     }
 
+    .location-menu-scrollable {
+      height: 100%;
+      overflow-y: scroll;
+      padding-bottom: 80px;
+    }
+
     .location-menu-details {
       background-color: #000000;
       color: #FFFFFF;
@@ -252,7 +258,25 @@
       }
     }
 
+    .location-menu-comments {
+      padding: 5px;
+      .location-menu-comment {
+        .location-menu-comment-user {
+          font-weight: 700;
+        }
+
+        .location-menu-comment-text {
+          font-size: 12px;
+        }
+
+        & + .location-menu-comment {
+          margin-top: 5px;
+        }
+      }
+    }
+
     .location-menu-actions {
+      background-color: #FFFFFF;
       bottom: 0px;
       height: 60px;
       left: 0px;
